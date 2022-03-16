@@ -1,6 +1,4 @@
-# ML2022
-Project repository for the Machine Learning course at the VU Amsterdam.  
-
+# Changelog
 ```
 Copyright (C) 2022 Project Group 127
 
@@ -16,3 +14,7 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 ```
+
+## Develop
++ Add script to request match information from API.
++ Add script to create data investigation plots.
