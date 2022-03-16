@@ -198,9 +198,7 @@ def parse_argvs():
              prefix for the tables, you should follow this structure:\
              /path/to/folder/prefix",
     )
-    parser.add_argument(
-        "-v", "--version", action="version", version="%(prog)s [0.1]"
-    )
+    parser.add_argument("-v", "--version", action="version", version="%(prog)s [0.1]")
     argvs = parser.parse_args()
     return argvs
 
@@ -218,9 +216,7 @@ def main():
     for id in match_id_list:
         details = fetch_match_details(id, user_arguments.steam_api_key)
         # linear_match_details = process_match_details(details)
-        played_heroes = create_data_table(
-            id, details, user_arguments.steam_api_key
-        )
+        played_heroes = create_data_table(id, details, user_arguments.steam_api_key)
         linear_table = linear_table.append(played_heroes, ignore_index=True)
     linear_table = linear_table.astype(int)
     fix_columns(
