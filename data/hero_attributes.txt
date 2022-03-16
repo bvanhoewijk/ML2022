@@ -1,0 +1,124 @@
+Hero	Primary Attribute	Base Str	Base Agi	Base Int	Str Gain	Agi Gain	Int Gain	Base Dmg	Base Armor	Base Magic Res	Base Move Speed	Attack Type	Attack Range	Attack Point	Attack Backswing	Base Attack Time	Turn Rate	Day Sight	Night Sight
+Abaddon	Strength 	22	23	15	2.8	1.5	2	31	-1	0.25	325	Melee	150	0.56	0.41	1.7	0.5	1800	800
+Alchemist	Strength 	25	22	25	2.9	1.2	1.8	30	-1	0.25	305	Melee	150	0.35	0.65	1.7	0.6	1800	800
+Ancient Apparition	Intelligence 	20	20	23	1.7	2.2	3.4	26	-1	0.25	285	Ranged	675	0.45	0.3	1.7	0.6	1800	800
+Anti-Mage	Agility 	23	24	12	1.6	2.8	1.8	31	0	0.25	310	Melee	150	0.3	0.6	1.4	0.5	1800	800
+Arc Warden	Agility 	22	20	24	2.6	2.5	2.6	36	-1	0.25	280	Ranged	625	0.3	0.7	1.7	0.7	1800	800
+Axe	Strength 	25	20	18	3.4	2.2	1.6	29	-1	0.25	310	Melee	150	0.4	0.5	1.7	0.6	1800	800
+Bane	Intelligence 	22	22	22	2.5	2.5	2.5	36	1	0.25	310	Ranged	400	0.3	0.7	1.7	0.6	1800	1200
+Batrider	Intelligence 	28	15	22	2.9	1.8	2.9	19	1	0.25	300	Ranged	400	0.3	0.54	1.7	0.9	1600	800
+Beastmaster	Strength 	23	18	16	2.9	1.6	1.9	35	0	0.25	305	Melee	150	0.3	0.7	1.7	0.5	1800	800
+Bloodseeker	Agility 	24	22	17	2.7	3.1	2	38	2	0.25	290	Melee	150	0.43	0.74	1.7	0.5	1800	800
+Bounty Hunter	Agility 	20	21	22	2.5	2.6	1.9	34	4	0.25	320	Melee	150	0.59	0.58	1.7	0.6	1800	1000
+Brewmaster	Strength 	23	19	15	3.7	2	1.6	32	-1	0.25	310	Melee	150	0.35	0.65	1.7	0.6	1800	800
+Bristleback	Strength 	22	17	14	2.9	1.8	2.8	35	1	0.25	290	Melee	150	0.3	0.3	1.8	1	1800	800
+Broodmother	Agility 	18	19	18	2.8	3.4	2	32	0	0.25	280	Melee	150	0.4	0.5	1.7	0.5	1800	800
+Centaur Warrunner	Strength 	27	15	15	4.6	1	1.6	37	0	0.25	300	Melee	150	0.3	0.3	1.7	0.5	1800	800
+Chaos Knight	Strength 	22	18	18	3.2	1.4	1.2	44	2	0.25	325	Melee	150	0.5	0.5	1.7	0.5	1800	800
+Chen	Intelligence 	25	15	19	1.8	2.1	3.2	32	-1	0.25	300	Ranged	650	0.5	0.5	1.7	0.6	1800	800
+Clinkz	Agility 	16	22	18	2	2.5	2.2	18	0	0.25	290	Ranged	600	0.3	0.3	1.7	0.4	1800	800
+Clockwerk	Strength 	26	13	18	3.5	2.3	1.5	25	1	0.25	310	Melee	150	0.33	0.64	1.7	0.6	1800	800
+Crystal Maiden	Intelligence 	18	16	16	2	1.6	2.9	31	-1	0.25	280	Ranged	600	0.45	0	1.7	0.5	1800	800
+Dark Seer	Intelligence 	20	18	21	3.1	1.8	3.1	36	2	0.25	295	Melee	150	0.59	0.58	1.7	0.6	1800	800
+Dark Willow	Intelligence 	20	18	21	1.8	1.6	3.5	31	-1	0.25	290	Ranged	475	0.3	0.51	1.5	0.7	1800	800
+Dawnbreaker	Strength 	26	14	20	3.6	1.7	2.2	33	2	0.25	310	Melee	150	0.46		1.7	0.6	1800	800
+Dazzle	Intelligence 	18	20	25	2.5	1.7	3.7	25	0	0.25	305	Ranged	575	0.3	0.3	1.7	0.7	1800	800
+Death Prophet	Intelligence 	21	14	24	3.1	1.8	3.3	28	1	0.25	325	Ranged	600	0.5	0.51	1.7	0.8	1800	800
+Disruptor	Intelligence 	21	15	20	2.4	1.4	2.9	31	0	0.25	295	Ranged	625	0.4	0.5	1.7	0.5	1800	800
+Doom	Strength 	24	11	15	3.7	0.9	1.7	39	3	0.25	285	Melee	200	0.5	0.7	1.9	0.5	1800	800
+Dragon Knight	Strength 	21	19	18	3.4	2	1.7	35	0	0.25	310	Melee	150	0.5	0.5	1.7	0.6	1800	800
+Drow Ranger	Agility 	18	20	15	1.9	2.9	1.4	32	-2	0.25	295	Ranged	625	0.5	0.3	1.7	0.7	1800	800
+Earth Spirit	Strength 	22	17	20	4.4	2.4	2.1	30	0	0.25	290	Melee	150	0.35	0.65	1.7	0.6	1800	800
+Earthshaker	Strength 	22	12	18	3.7	1.4	2.1	32	2	0.25	315	Melee	150	0.467	0.863	1.7	0.9	1800	800
+Elder Titan	Strength 	26	14	23	3	1.8	1.6	28	0	0.25	310	Melee	150	0.35	0.97	1.7	0.5	1800	800
+Ember Spirit	Agility 	21	22	20	2.6	2.9	2.2	35	-1	0.25	305	Melee	150	0.4	0.3	1.7	0.5	1800	800
+Enchantress	Intelligence 	17	19	22	1.7	1.8	3.8	28	1	0.25	320	Ranged	575	0.3	0.7	1.7	0.6	1800	800
+Enigma	Intelligence 	21	14	19	2.5	1	3.6	27	2	0.25	290	Ranged	500	0.4	0.77	1.7	0.5	1800	800
+Faceless Void	Agility 	20	19	15	2.4	3	1.5	40	1	0.25	300	Melee	150	0.5	0.56	1.7	1	1800	800
+Grimstroke	Intelligence 	21	18	25	2.4	1.9	3.8	23	0	0.25	290	Ranged	600	0.35	0.53	1.7	0.6	1800	800
+Gyrocopter	Agility 	22	26	21	2.5	3.3	2.4	19	2	0.25	315	Ranged	365	0.2	0.1	1.7	0.6	1800	800
+Hoodwink	Agility 	17	24	21	2	3.6	1.9	25	0	0.25	310	Ranged	575	0.4	1.5	2	0.9	1800	800
+Huskar	Strength 	21	13	18	3.4	1.6	1.5	23	-1	0.25	295	Ranged	400	0.3	0.5	1.6	0.5	1800	800
+Invoker	Intelligence 	18	14	15	2.4	1.9	4.6	32	0	0.25	275	Ranged	600	0.4	0.7	1.7	0.5	1800	800
+Io	Strength 	17	14	23	3	1.6	1.7	31	1	0.25	320	Ranged	500	0.3	0.4	1.7	0.7	1800	800
+Jakiro	Intelligence 	27	15	26	2.8	1.2	3	31	1	0.25	290	Ranged	400	0.4	0.3	1.7	0.5	1800	800
+Juggernaut	Agility 	20	34	14	2.2	2.8	1.4	18	0	0.25	305	Melee	150	0.33	0.84	1.4	0.6	1800	800
+Keeper of the Light	Intelligence 	18	15	23	2.3	1.6	3.2	21	0	0.25	330	Ranged	600	0.3	0.85	1.7	0.5	1800	800
+Kunkka	Strength 	24	14	18	3.8	1.6	1.8	31	2	0.25	315	Melee	150	0.4	0.3	1.7	0.6	1800	800
+Legion Commander	Strength 	25	18	20	3.3	1.7	2.2	37	0	0.25	330	Melee	150	0.46	0.64	1.7	0.5	1800	800
+Leshrac	Intelligence 	20	23	22	2.8	2.5	3.5	24	0	0.25	325	Ranged	575	0.4	0.6	1.7	0.5	1800	800
+Lich	Intelligence 	20	15	24	2.1	2	4.1	28	-1	0.25	295	Ranged	550	0.46	0.54	1.7	0.5	1800	800
+Lifestealer	Strength 	25	19	15	2.4	2.6	1.8	25	1	0.25	320	Melee	150	0.39	0.44	1.7	1	1800	800
+Lina	Intelligence 	20	23	30	2.4	2.1	3.7	25	0	0.25	290	Ranged	670	0.65	0.6	1.6	0.6	1800	800
+Lion	Intelligence 	18	18	18	2.2	1.5	3.5	32	-1	0.25	290	Ranged	600	0.43	0.74	1.7	0.5	1800	800
+Lone Druid	Agility 	18	20	13	2.5	2.8	1.4	20	-2	0.25	325	Ranged	550	0.33	0.53	1.6	0.5	1800	800
+Luna	Agility 	21	24	23	2.2	3.4	1.9	35	2	0.25	325	Ranged	330	0.46	0.54	1.7	0.6	1800	800
+Lycan	Strength 	26	16	23	3.4	1.7	1.7	26	0	0.25	315	Melee	150	0.55	0.25	1.7	0.6	1800	800
+Magnus	Strength 	25	15	19	3.5	2.5	2.1	36	1	0.25	305	Melee	150	0.5	0.84	1.8	0.8	1800	800
+Marci	Strength 	23	20	19	3.3	2.4	1.9	35	0	0.25	310	Melee	150	0.3	0.5	1.7	0.9	1800	800
+Mars	Strength 	23	20	21	3.4	1.7	2.2	33	-1	0.25	310	Melee	250	0.4	1.38	1.7	0.8	1800	800
+Medusa	Agility 	17	22	23	1.5	3.4	3.4	29	-1	0.25	275	Ranged	600	0.5	0.6	1.7	0.5	1800	800
+Meepo	Agility 	24	17	20	1.6	1.6	1.6	25	3	0.25	330	Melee	150	0.38	0.6	1.7	0.7	1800	800
+Mirana	Agility 	18	18	22	2.2	3.7	1.9	29	-1	0.25	290	Ranged	630	0.35	0.7	1.7	0.6	1800	800
+Monkey King	Agility 	18	22	20	2.8	3.7	1.8	31	2	0.25	300	Melee	300	0.45	0.2	1.7	0.6	1800	800
+Morphling	Agility 	22	24	19	3	3.9	1.8	13	-2	0.25	280	Ranged	350	0.5	0.5	1.5	0.6	1800	800
+Naga Siren	Agility 	21	21	21	2.8	3.3	2	24	3	0.25	330	Melee	150	0.5	0.5	1.7	0.5	1800	800
+Nature's Prophet	Intelligence 	21	22	23	2.6	3.6	3.7	32	0	0.25	295	Ranged	600	0.4	0.6	1.7	0.6	1800	800
+Necrophos	Intelligence 	18	12	21	2.6	1.3	2.7	28	1	0.25	280	Ranged	500	0.3	0.47	1.7	0.5	1800	800
+Night Stalker	Strength 	23	18	15	3	2.3	1.6	42	2	0.25	300	Melee	150	0.55	0.55	1.7	0.5	800	1800
+Nyx Assassin	Agility 	17	18	21	2.5	2.5	2.1	29	1	0.25	310	Melee	150	0.46	0.54	1.7	0.5	1800	800
+Ogre Magi	Intelligence 	23	14	15	3.3	1.5	2.5	37	5	0.25	290	Melee	150	0.3	0.3	1.7	0.6	1800	800
+Omniknight	Strength 	23	15	15	3.1	2	1.8	36	2	0.25	315	Melee	150	0.433	0.567	1.7	0.6	1800	800
+Oracle	Intelligence 	20	15	26	2.4	1.7	3.8	16	1	0.25	295	Ranged	620	0.3	0.7	1.7	0.7	1800	800
+Outworld Destroyer	Intelligence 	21	22	30	2.9	1.6	4.2	25	1	0.25	320	Ranged	450	0.46	0.54	1.9	0.5	1800	800
+Pangolier	Agility 	17	18	16	2.5	3.2	1.9	36	1	0.25	300	Melee	150	0.33	0.51	1.7	1	1800	800
+Phantom Assassin	Agility 	21	23	15	2.2	3.4	1.4	33	1	0.25	305	Melee	150	0.3	0.7	1.7	0.6	1800	800
+Phantom Lancer	Agility 	19	26	21	2.2	3.2	2	31	-1	0.25	290	Melee	150	0.5	0.5	1.7	0.6	1800	800
+Phoenix	Strength 	23	12	16	3.5	1.3	1.8	31	-1	0.25	280	Ranged	525	0.35	0.633	1.7	1	1800	800
+Primal Beast	Strength 	26	15	16	4.3	1	1.4	63	4.5	0.25	305	Melee	150	0.5		1.8	0.6	1800	800
+Puck	Intelligence 	17	22	23	2.4	2.5	3.5	49	-3	0.25	290	Ranged	550	0.5	0.8	1.7	0.8	1800	800
+Pudge	Strength 	25	14	16	3	1.4	1.5	45	0	0.25	280	Melee	175	0.5	1.17	1.7	0.7	1800	800
+Pugna	Intelligence 	19	24	24	2	1.3	5.2	24	0	0.25	330	Ranged	630	0.5	0.5	1.7	0.5	1800	800
+Queen of Pain	Intelligence 	18	25	25	2.4	2.5	3.4	24	0	0.25	290	Ranged	550	0.56	0.41	1.5	0.5	1800	800
+Razor	Agility 	22	22	21	2.8	2.6	2.2	24	-1	0.25	290	Ranged	475	0.3	0.4	1.7	0.5	1800	800
+Riki	Agility 	18	18	14	2.4	1.4	1.3	43	3	0.25	320	Melee	150	0.3	0.3	1.7	0.6	1800	800
+Rubick	Intelligence 	21	23	25	2	2.5	3.1	27	0	0.25	290	Ranged	550	0.4	0.77	1.7	0.7	1800	800
+Sand King	Strength 	22	19	19	2.7	1.8	1.8	28	-1	0.25	290	Melee	150	0.53	0.47	1.7	0.5	1800	800
+Shadow Demon	Intelligence 	23	18	22	2.6	2.2	3.6	31	0	0.25	290	Ranged	500	0.3	0.5	1.7	0.6	1800	800
+Shadow Fiend	Agility 	19	20	18	2.7	3.5	2.2	22	1	0.25	305	Ranged	500	0.5	0.54	1.6	1	1800	800
+Shadow Shaman	Intelligence 	23	16	25	2.3	1.6	3.5	49	1	0.25	285	Ranged	400	0.3	0.5	1.7	0.5	1800	800
+Silencer	Intelligence 	19	22	25	2.4	2.4	2.9	25	-1	0.25	290	Ranged	600	0.5	0.5	1.7	0.6	1800	800
+Skywrath Mage	Intelligence 	21	13	25	2	0.8	4.1	21	-2	0.25	325	Ranged	625	0.4	0.78	1.7	0.5	1800	800
+Slardar	Strength 	21	17	15	3.6	2.4	1.5	34	3	0.25	300	Melee	150	0.36	0.64	1.7	0.5	1800	800
+Slark	Agility 	21	21	16	1.9	1.7	1.7	36	0	0.25	300	Melee	150	0.5	0.3	1.7	0.7	1800	1800
+Snapfire	Strength 	20	16	21	3.3	1.9	2.2	29	1	0.25	300	Ranged	500	0.35	1.23	1.6	0.6	1800	800
+Sniper	Agility 	19	27	15	2	3.2	2.6	22	-1	0.25	285	Ranged	550	0.17	0.7	1.7	0.7	1800	1400
+Spectre	Agility 	23	23	16	2.5	2.1	1.9	25	1	0.25	290	Melee	150	0.3	0.7	1.7	0.5	1800	800
+Spirit Breaker	Strength 	28	17	14	3	1.7	1.8	36	2	0.25	295	Melee	150	0.6	0.3	1.9	0.5	1800	800
+Storm Spirit	Intelligence 	21	22	23	2	1.7	3.9	29	2	0.25	285	Ranged	480	0.5	0.3	1.7	0.8	1800	800
+Sven	Strength 	22	21	16	3.2	2	1.3	42	0	0.25	325	Melee	150	0.4	0.3	1.9	0.6	1800	800
+Techies	Intelligence 	19	14	25	2.5	1.3	3.3	10	5	0.25	320	Ranged	700	0.5	0.5	1.7	0.5	1800	800
+Templar Assassin	Agility 	21	23	20	2.4	3.2	2	33	1	0.25	305	Ranged	160	0.3	0.5	1.7	0.7	1800	800
+Terrorblade	Agility 	16	22	19	2	4.4	1.6	33	5	0.25	315	Melee	150	0.3	0.6	1.5	0.5	1800	800
+Tidehunter	Strength 	27	15	18	3.5	1.5	1.7	28	0	0.25	300	Melee	150	0.6	0.56	1.7	0.5	1800	800
+Timbersaw	Strength 	24	16	23	3.2	1.6	2.7	29	0	0.25	290	Melee	150	0.36	0.64	1.7	0.6	1800	800
+Tinker	Intelligence 	18	13	30	2.5	1.2	3.3	27	2	0.25	290	Ranged	500	0.35	0.65	1.7	0.6	1800	800
+Tiny	Strength 	30	0	17	4	0	2.2	34	0	0.25	295	Melee	150	0.4	0.7	1.7	0.5	1800	800
+Treant Protector	Strength 	25	15	20	3.4	2	1.8	66	-1	0.25	285	Melee	150	0.6	0.4	1.9	0.5	1800	800
+Troll Warlord	Agility 	21	21	13	2.5	3.3	1	31	-1	0.25	290	Ranged	500	0.3	0.3	1.7	0.5	1800	800
+Tusk	Strength 	23	23	18	3.9	2.1	1.7	29	1	0.25	310	Melee	150	0.36	0.64	1.7	0.7	1800	800
+Underlord	Strength 	25	12	17	3	1.6	2.3	40	3	0.25	290	Melee	200	0.45	0.7	1.7	0.6	1800	800
+Undying	Strength 	22	10	27	2.8	1.2	2.8	39	1	0.25	300	Melee	150	0.3	0.3	1.7	0.6	1800	800
+Ursa	Agility 	25	18	16	2.6	2.6	1.5	26	1	0.25	310	Melee	150	0.3	0.3	1.7	0.5	1800	800
+Vengeful Spirit	Agility 	19	20	19	2.6	3.2	1.5	27	0	0.25	295	Ranged	400	0.33	0.64	1.7	0.6	1800	800
+Venomancer	Agility 	19	24	19	2.1	2.8	1.8	19	0	0.25	280	Ranged	450	0.3	0.7	1.7	0.5	1800	800
+Viper	Agility 	21	21	17	2.4	2.7	2	28	-2	0.25	275	Ranged	575	0.33	1	1.7	0.5	1800	800
+Visage	Intelligence 	22	11	22	2.8	1.3	2.9	28	-1	0.25	285	Ranged	600	0.4	0.54	1.7	0.5	1800	800
+Void Spirit	Intelligence 	22	19	24	2.6	2.2	3.1	32	-1	0.25	295	Melee	200	0.35	0.78	1.7	0.7	1800	800
+Warlock	Intelligence 	24	10	25	3	1	3.1	29	1	0.25	290	Ranged	600	0.3	0.3	1.7	0.5	1800	800
+Weaver	Agility 	16	17	20	1.8	3.1	2	40	0	0.25	275	Ranged	425	0.55	0.36	1.8	0.5	1800	800
+Windranger	Intelligence 	18	17	18	3	1.4	3.6	30	-1	0.25	290	Ranged	600	0.4	0.3	1.5	0.8	1800	800
+Winter Wyvern	Intelligence 	24	16	26	2.6	1.7	3.6	17	0	0.25	285	Ranged	425	0.25	0.8	1.7	0.5	1800	800
+Witch Doctor	Intelligence 	18	13	22	2.3	1.4	3.3	34	0	0.25	300	Ranged	600	0.4	0.5	1.7	0.5	1800	800
+Wraith King	Strength 	22	18	18	3	1.7	1.6	39	-1	0.25	315	Melee	150	0.56	0.44	1.7	0.5	1800	800
+Zeus	Intelligence 	19	11	22	2.1	1.2	3.3	37	2	0.25	315	Ranged	380	0.35	0.366	1.7	0.6	1800	800
