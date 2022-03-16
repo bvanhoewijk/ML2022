@@ -1,4 +1,5 @@
-# ML2022
+# ML2022 Group 127
+Project repository for the Machine Learning course at the VU Amsterdam.  
 
 
 Adding hero attributes to match information:
