@@ -23,9 +23,9 @@ import json
 from urllib.request import urlopen
 
 
-def fix_columns(linear_table, output_location, api_key):
+def get_hero_information(api_key):
     """
-    The fix_columns funtion:
+    The get_hero_information funtion:
         TEXT
     """
     default = "http://api.steampowered.com/IEconDOTA2_570/GetHeroes/v1/"
@@ -33,8 +33,16 @@ def fix_columns(linear_table, output_location, api_key):
     url = default + key
     response = urlopen(url)
     data_json = json.loads(response.read())
+    return data_json
+
+
+def fix_columns(linear_table, output_location, base_hero_info):
+    """
+    The fix_columns funtion:
+        TEXT
+    """
     new_column_names = {}
-    for hero in data_json["result"]["heroes"]:
+    for hero in base_hero_info["result"]["heroes"]:
         hero_name = "_".join(hero["name"].split("_")[3:])
         hero_id = hero["id"]
         hero_column_name = str(hero_id) + "_" + str(hero_name)
@@ -47,23 +55,18 @@ def fix_columns(linear_table, output_location, api_key):
     )
 
 
-def fetch_hero_names(api_key, player_heroes):
+def fetch_hero_names(player_heroes, base_hero_info):
     """
     The fetch_hero_names funtion:
         TEXT
     """
-    default = "http://api.steampowered.com/IEconDOTA2_570/GetHeroes/v1/"
-    key = "?key=" + str(api_key)
-    url = default + key
-    response = urlopen(url)
-    data_json = json.loads(response.read())
-    for hero in data_json["result"]["heroes"]:
+    for hero in base_hero_info["result"]["heroes"]:
         hero_id = int(hero["id"])
         player_heroes[hero_id] = 0
     return player_heroes
 
 
-def extract_played_heroes(match_details, api_key, data_table):
+def extract_played_heroes(match_details, data_table, base_hero_info):
     """
     The extract_played_heroes function:
         Below is some information described by the "player_slot" entry for each
@@ -78,7 +81,7 @@ def extract_played_heroes(match_details, api_key, data_table):
         in "radiant_win":
             Dictates the winner of the match, true for radiant; false for dire.
     """
-    player_heroes = fetch_hero_names(api_key, data_table)
+    player_heroes = fetch_hero_names(data_table, base_hero_info)
     for player in match_details["result"]["players"]:
         player_slot = int(player["player_slot"])
         player_team = int(f"{player_slot:08b}"[0])
@@ -90,7 +93,7 @@ def extract_played_heroes(match_details, api_key, data_table):
     return player_heroes
 
 
-def create_data_table(match_id, match_details, api_key):
+def create_data_table(match_id, match_details, api_key, base_hero_info):
     """
     The create_data_table function:
         Some information on how to know which team won the game, described
@@ -104,7 +107,9 @@ def create_data_table(match_id, match_details, api_key):
         data_table["match_result"] = 1
     elif not winning_team:
         data_table["match_result"] = -1
-    data_table = extract_played_heroes(match_details, api_key, data_table)
+    data_table = extract_played_heroes(
+        match_details, data_table, base_hero_info
+    )
     return data_table
 
 
@@ -148,6 +153,31 @@ def process_match_ids(id_list, column_name):
     """
     match_table = pandas.read_csv(id_list, sep=",", header=0)
     return match_table[column_name].to_list()
+
+
+def retrieve_match_ids(steam_key, oldest_match):
+    """
+    The retrieve_match_ids function:
+        TEXT
+    """
+    main = "http://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/v1/"
+    nr_of_matches = "?matches_requested=1000"
+    nr_of_players = "&min_players=10"
+    # game_mode = "&game_mode=2"
+    # tournament_filter = "&tournament_games_only=0"
+    api_key = "&key=" + str(steam_key)
+    url = main + nr_of_matches + nr_of_players + api_key
+    if oldest_match == False:
+        pass
+    else:
+        start_at_match_id = "&start_at_match_id=" + str(oldest_match)
+        url = url + str(start_at_match_id)
+    respone = urlopen(url)
+    data_json = json.loads(respone.read())
+    match_id_list = []
+    for match in data_json["result"]["matches"]:
+        match_id_list.append(match["match_id"])
+    return match_id_list
 
 
 def parse_argvs():
@@ -199,6 +229,15 @@ def parse_argvs():
              /path/to/folder/prefix",
     )
     parser.add_argument(
+        "-r",
+        "--retrieve",
+        action="store_true",
+        dest="retrieve_match_ids",
+        default=False,
+        help="If you want to retrieve match IDs instead of creating a new data\
+             table.",
+    )
+    parser.add_argument(
         "-v", "--version", action="version", version="%(prog)s [0.1]"
     )
     argvs = parser.parse_args()
@@ -211,23 +250,33 @@ def main():
         TEXT
     """
     user_arguments = parse_argvs()
-    match_id_list = process_match_ids(
-        user_arguments.match_id_list, user_arguments.match_id_column_title
-    )
-    linear_table = pandas.DataFrame()
-    for id in match_id_list:
-        details = fetch_match_details(id, user_arguments.steam_api_key)
-        # linear_match_details = process_match_details(details)
-        played_heroes = create_data_table(
-            id, details, user_arguments.steam_api_key
+    hero_info = get_hero_information(user_arguments.steam_api_key)
+    if user_arguments.retrieve_match_ids:
+        match_ids = retrieve_match_ids(user_arguments.steam_api_key, False)
+        print(match_ids)
+        for iteration in range(10):
+            match_ids = retrieve_match_ids(
+                user_arguments.steam_api_key, match_ids[-1]
+            )
+            print(match_ids)
+    else:
+        match_id_list = process_match_ids(
+            user_arguments.match_id_list, user_arguments.match_id_column_title
         )
-        linear_table = linear_table.append(played_heroes, ignore_index=True)
-    linear_table = linear_table.astype(int)
-    fix_columns(
-        linear_table,
-        user_arguments.output_location,
-        user_arguments.steam_api_key,
-    )
+        linear_table = pandas.DataFrame()
+        nr_of_ids = len(match_id_list)
+        for id in match_id_list:
+            print(nr_of_ids)
+            details = fetch_match_details(id, user_arguments.steam_api_key)
+            played_heroes = create_data_table(
+                id, details, user_arguments.steam_api_key, hero_info
+            )
+            linear_table = linear_table.append(
+                played_heroes, ignore_index=True
+            )
+            nr_of_ids -= 1
+        linear_table = linear_table.astype(int)
+        fix_columns(linear_table, user_arguments.output_location, hero_info)
 
 
 if __name__ == "__main__":
