@@ -4,16 +4,12 @@ import sklearn.metrics as metrics
 
 def Confusion_Matrix(predictions, targets):
 
-    tpr = sum()
-
-    confusion_matrix = [tpr, fnr, fpr, tnr]
-
 return confusion_matrix
 
-def ROC_Plot():
+def ROC_Plot(predictions, targets):
 
 return roc
 
-def Coverage_Matrix ():
+def Coverage_Matrix (predictions, targets):
 
 return coverage_matrix
