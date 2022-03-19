@@ -25,6 +25,7 @@ import pandas as pd
 from mlxtend.plotting import plot_decision_regions
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 
@@ -70,16 +71,19 @@ def linear_classification(train_x, train_y, test_x, test_y):
         test_x[:500], test_y.astype(np.integer)[:500], clf=linear
     )
 
-
 def load_data():
-    training_data = pandas.read_csv("../data/dota2TrainingNamed.csv", sep=",")
-    test_data = pandas.read_csv("../data/dota2TestNamed.csv", sep=",")
+    training_data = pandas.read_csv(".../data/dota2TrainingNamed.csv", sep=",")
+    test_data = pandas.read_csv(".../data/dota2TestNamed.csv", sep=",")
     training_features_x = training_data.iloc[:, 4:]
     training_class_y = training_data["winning_team"]
     test_features_x = test_data.iloc[:, 4:]
     test_class_y = test_data["winning_team"]
     print("LOADED DATA")
     return training_features_x, training_class_y, test_features_x, test_class_y
+
+def plot_confusion_matrix(predictions, targets):
+    conf_mat = confusion_matrix(targets, predictions)
+    print(conf_mat)
 
 
 def main():
