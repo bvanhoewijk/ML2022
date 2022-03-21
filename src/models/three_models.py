@@ -25,8 +25,10 @@ import pandas as pd
 from mlxtend.plotting import plot_decision_regions
 from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
+import matplotlib.pyplot as plot
 
 
 def decision_tree_classification(train_x, train_y, test_x, test_y):
@@ -64,16 +66,15 @@ def linear_classification(train_x, train_y, test_x, test_y):
     print("FITTED LINEAR MODEL")
     linear_prediction = linear.predict(test_x)
     print("TESTED LINEAR MODEL")
-    linear_accuracy = accuracy_score(test_y, linear_prediction)
-    print("LINEAR MODEL ACCURACY: " + str(linear_accuracy))
     plot_decision_regions(
-        test_x[:500], test_y.astype(np.integer)[:500], clf=linear
+        test_x[:500], test_x.astype(np.integer)[:500], clf=linear
     )
+    return linear, linear_prediction
 
 
 def load_data():
-    training_data = pandas.read_csv("../data/dota2TrainingNamed.csv", sep=",")
-    test_data = pandas.read_csv("../data/dota2TestNamed.csv", sep=",")
+    training_data = pandas.read_csv("../../data/dota2TrainingNamed.csv", sep=",")
+    test_data = pandas.read_csv("../../data/dota2TestNamed.csv", sep=",")
     training_features_x = training_data.iloc[:, 4:]
     training_class_y = training_data["winning_team"]
     test_features_x = test_data.iloc[:, 4:]
@@ -82,9 +83,23 @@ def load_data():
     return training_features_x, training_class_y, test_features_x, test_class_y
 
 
+def plot_accuracy_score(target_y, prediction):
+    accuracy = accuracy_score(target_y, prediction)
+    print("LINEAR MODEL ACCURACY: " + str(accuracy))
+
+
+def plot_confusion_matrix(classifier, test_x, test_y):
+    plot_confusion_matrix(classifier, test_x, test_y)
+    plot.show()
+
+
 def main():
     training_x, training_y, test_x, test_y = load_data()
-    linear_classification(training_x, training_y, test_x, test_y)
+    classifier_linear, prediction_linear = linear_classification(training_x, training_y, test_x, test_y)
+
+    plot_accuracy_score(test_y, prediction_linear)
+    plot_confusion_matrix(classifier_linear, test_x, test_y)
+
 
 
 if __name__ == "__main__":
