@@ -66,6 +66,20 @@ def fetch_hero_names(player_heroes, base_hero_info):
     return player_heroes
 
 
+def multiply_by_1(match_instance):
+    """
+    The multiply_by_1 funtion:
+        TEXT
+    """
+    if match_instance["match_result"] == -1:
+        for key in match_instance:
+            if key == "match_id" or key == "game_mode":
+                pass
+            else:
+                match_instance[key] = match_instance[key] * -1
+    return match_instance
+
+
 def extract_played_heroes(match_details, data_table, base_hero_info):
     """
     The extract_played_heroes function:
@@ -93,7 +107,7 @@ def extract_played_heroes(match_details, data_table, base_hero_info):
     return player_heroes
 
 
-def create_data_table(match_id, match_details, api_key, base_hero_info):
+def create_data_table(match_id, match_details, base_hero_info):
     """
     The create_data_table function:
         Some information on how to know which team won the game, described
@@ -102,6 +116,7 @@ def create_data_table(match_id, match_details, api_key, base_hero_info):
     """
     data_table = {}
     data_table["match_id"] = match_id
+    data_table["game_mode"] = match_details["result"]["game_mode"]
     winning_team = match_details["result"]["radiant_win"]
     if winning_team:
         data_table["match_result"] = 1
@@ -228,9 +243,6 @@ def parse_argvs():
              prefix for the tables, you should follow this structure:\
              /path/to/folder/prefix",
     )
-<<<<<<< HEAD
-    parser.add_argument("-v", "--version", action="version", version="%(prog)s [0.1]")
-=======
     parser.add_argument(
         "-r",
         "--retrieve",
@@ -241,9 +253,17 @@ def parse_argvs():
              table.",
     )
     parser.add_argument(
+        "-m",
+        "--multiply",
+        action="store_true",
+        dest="multiply_minus",
+        default=False,
+        help="If you want to multiply all matches won by the -1 group by\
+              -1 to get 1s across the board.",
+    )
+    parser.add_argument(
         "-v", "--version", action="version", version="%(prog)s [0.1]"
     )
->>>>>>> 2d411da9634328931dafa843c368587502a12c7a
     argvs = parser.parse_args()
     return argvs
 
@@ -254,23 +274,6 @@ def main():
         TEXT
     """
     user_arguments = parse_argvs()
-<<<<<<< HEAD
-    match_id_list = process_match_ids(
-        user_arguments.match_id_list, user_arguments.match_id_column_title
-    )
-    linear_table = pandas.DataFrame()
-    for id in match_id_list:
-        details = fetch_match_details(id, user_arguments.steam_api_key)
-        # linear_match_details = process_match_details(details)
-        played_heroes = create_data_table(id, details, user_arguments.steam_api_key)
-        linear_table = linear_table.append(played_heroes, ignore_index=True)
-    linear_table = linear_table.astype(int)
-    fix_columns(
-        linear_table,
-        user_arguments.output_location,
-        user_arguments.steam_api_key,
-    )
-=======
     hero_info = get_hero_information(user_arguments.steam_api_key)
     if user_arguments.retrieve_match_ids:
         match_ids = retrieve_match_ids(user_arguments.steam_api_key, False)
@@ -289,16 +292,17 @@ def main():
         for id in match_id_list:
             print(nr_of_ids)
             details = fetch_match_details(id, user_arguments.steam_api_key)
-            played_heroes = create_data_table(
-                id, details, user_arguments.steam_api_key, hero_info
-            )
+            played_heroes = create_data_table(id, details, hero_info)
+            if user_arguments.multiply_minus:
+                updated_played_heroes = multiply_by_1(played_heroes)
+            else:
+                updated_played_heroes = played_heroes
             linear_table = linear_table.append(
-                played_heroes, ignore_index=True
+                updated_played_heroes, ignore_index=True
             )
             nr_of_ids -= 1
         linear_table = linear_table.astype(int)
         fix_columns(linear_table, user_arguments.output_location, hero_info)
->>>>>>> 2d411da9634328931dafa843c368587502a12c7a
 
 
 if __name__ == "__main__":
@@ -341,4 +345,29 @@ Additional information:
         * radiant_captain
         * dire_captain
         * picks_bans
+        
+    game_mode_coding = {
+        0: "None",
+        1: "All Pick",
+        2: "Captains Mode",
+        3: "Random Draft",
+        4: "Single Draft",
+        5: "All Random",
+        6: "Intro",
+        7: "Diretide",
+        8: "Reverse Captains Mode",
+        9: "The Greeviling",
+        10: "Tutorial",
+        11: "Mid Only",
+        12: "Least Played",
+        13: "New Player Pool",
+        14: "Compendium Matchmaking",
+        15: "Co-op vs Bots",
+        16: "Captains Draft",
+        18: "Ability Draft",
+        20: "All Random Deathmatch",
+        21: "1v1 Mid Only",
+        22: "Ranked Matchmaking",
+        23: "Turbo Mode",
+    }
 """
