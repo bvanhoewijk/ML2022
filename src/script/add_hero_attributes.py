@@ -9,16 +9,16 @@ def hero_attributes_per_team(match, hero_data):
 
     # Initialize empty series (basically an ordered dictionary)
     att = pd.Series(data={
-        "radiant_str" : 0,
-        "radiant_int" : 0,
-        "radiant_agi" : 0,
-        "radiant_melee": 0,
-        "radiant_ranged": 0,
-        "dire_str" : 0,
-        "dire_int" : 0,
-        "dire_agi" : 0,
-        "dire_melee": 0,
-        "dire_ranged": 0,
+        "radiant_str" : 0.0,
+        "radiant_int" : 0.0,
+        "radiant_agi" : 0.0,
+        "radiant_melee": 0.0,
+        "radiant_ranged": 0.0,
+        "dire_str" : 0.0,
+        "dire_int" : 0.0,
+        "dire_agi" : 0.0,
+        "dire_melee": 0.0,
+        "dire_ranged": 0.0,
     })    
 
     # Filter on Radiant and select column of interest:
@@ -33,29 +33,29 @@ def hero_attributes_per_team(match, hero_data):
     # Add a value if we found the category
     for val in [*attributes_radiant, *attack_type_radiant]:
         if val == "Intelligence":
-            att['radiant_int'] += 1
+            att['radiant_int'] += 0.2
         if val == "Agility":
-            att['radiant_agi'] += 1
+            att['radiant_agi'] += 0.2
         if val == "Strength":
-            att['radiant_str'] += 1
+            att['radiant_str'] += 0.2
         if val == "Melee":
-            att['radiant_melee'] += 1
+            att['radiant_melee'] += 0.2
         if val == "Ranged":
-            att['radiant_ranged'] += 1
+            att['radiant_ranged'] += 0.2
 
     # Merge the two lists and iterate over them:
     # Add a value if we found the category
     for val in [*attributes_dire, *attack_type_dire]:
         if val == "Intelligence":
-            att['dire_int'] += 1
+            att['dire_int'] += 0.2
         if val == "Agility":
-            att['dire_agi'] += 1
+            att['dire_agi'] += 0.2
         if val == "Strength":
-            att['dire_str'] += 1
+            att['dire_str'] += 0.2
         if val == "Melee":
-            att['dire_melee'] += 1
+            att['dire_melee'] += 0.2
         if val == "Ranged":
-            att['dire_ranged'] += 1
+            att['dire_ranged'] += 0.2
 
     return att
 
