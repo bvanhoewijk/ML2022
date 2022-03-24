@@ -4,8 +4,14 @@ Project repository for the Machine Learning course at the VU Amsterdam.
 [![Code Style: Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
-Adding hero attributes to match information:
-`python src/script/add_hero_attributes.py data/jan_2021_to_feb_2022_linear_output.csv data/hero_attributes.txt data/jan_2021_to_feb_2022_linear_output_with_attributes.csv`
+Adding hero attributes to match information:  
+```
+python \
+    ./src/script/add_hero_attributes.py \
+    ./data/jan_2021_to_feb_2022_linear_output.csv \
+    ./data/hero_attributes.txt \
+    ./data/jan_2021_to_feb_2022_linear_output_with_attributes.csv
+```
 
 ```
 Copyright (C) 2022 Project Group 127
