@@ -18,6 +18,8 @@
 Imports:
 """
 import pandas
+import numpy
+import matplotlib.pyplot as plt
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
@@ -26,11 +28,20 @@ from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import classification_report
+from sklearn.metrics import (
+    plot_confusion_matrix,
+    classification_report,
+    precision_score,
+    recall_score,
+    f1_score,
+    precision_recall_fscore_support,
+    plot_roc_curve,
+)
 
 
 def random_forest_classification(x_train, y_train, x_val, y_val):
     # Number of trees in random forest
-    n_estimators = [int(x) for x in np.linspace(start=50, stop=55, num=6)]
+    n_estimators = [int(x) for x in numpy.linspace(start=50, stop=55, num=6)]
     # Number of features to consider at every split
     max_features = ["auto", "sqrt"]
     # Maximum number of levels in tree
@@ -51,10 +62,11 @@ def random_forest_classification(x_train, y_train, x_val, y_val):
         "bootstrap": bootstrap,
     }
     random_forest = RandomForestClassifier()
-    # Default value for cv is 5 for a 5-fold cross validation but I have played around with a few other integers
-    # and have found 30 to be a nice balance of computational power and results. Changing the value for verbose just
-    # shows more messages regarding the computation time of the fold and how each parameter gets decided.
-    # n_jobs
+    # Default value for cv is 5 for a 5-fold cross validation but I have played
+    # around with a few other integers and have found 30 to be a nice balance
+    # of computational power and results. Changing the value for verbose just
+    # shows more messages regarding the computation time of the fold and how
+    # each parameter gets decided.
     grid_random_forest = GridSearchCV(
         estimator=random_forest,
         param_grid=param_grid,
@@ -176,8 +188,8 @@ def plot_accuracy_score(target_y, prediction):
 
 
 def plot_confusion_matrix(classifier, test_x, test_y):
-    plot_confusion_matrix(classifier, test_x, test_y)
-    plot.show()
+    plt_confusion_matrix(classifier, test_x, test_y)
+    plt.show()
 
 
 def main():
@@ -191,7 +203,7 @@ def main():
         x_train, y_train, x_val, y_val
     )
     # plot_accuracy_score(test_y, prediction_linear)
-    # plot_confusion_matrix(classifier_linear, test_x, test_y)
+    # plot_confusion_matrix(linear_model, x_test, y_test)
 
 
 if __name__ == "__main__":
