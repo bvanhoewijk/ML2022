@@ -19,4 +19,4 @@ black \
     -l 79 \
     -t py38 \
     -v \
-    ./three_models.py
+    ./run_models.py
