@@ -24,11 +24,10 @@ from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import classification_report
 from sklearn.metrics import (
+    accuracy_score,
     plot_confusion_matrix,
     classification_report,
     precision_score,
@@ -89,7 +88,7 @@ def random_forest_classification(x_train, y_train, x_val, y_val):
     y_true, y_pred = y_val, grid_random_forest.predict(x_val)
     print(classification_report(y_true, y_pred))
     print()
-    return grid_random_forest
+    return grid_random_forest, y_pred
 
 
 def decision_tree_classification(x_train, y_train, x_val, y_val):
@@ -117,7 +116,7 @@ def decision_tree_classification(x_train, y_train, x_val, y_val):
     y_true, y_pred = y_val, grid_decision_tree.predict(x_val)
     print(classification_report(y_true, y_pred))
     print()
-    return grid_decision_tree
+    return grid_decision_tree, y_pred
 
 
 def kNN_classification(x_train, y_train, x_val, y_val):
@@ -140,7 +139,7 @@ def kNN_classification(x_train, y_train, x_val, y_val):
     y_true, y_pred = y_val, grid_knn.predict(x_val)
     print(classification_report(y_true, y_pred))
     print()
-    return grid_knn
+    return grid_knn, y_pred
 
 
 def linear_classification(x_train, y_train, x_val, y_val):
@@ -164,7 +163,7 @@ def linear_classification(x_train, y_train, x_val, y_val):
     y_true, y_pred = y_val, grid_linear.predict(x_val)
     print(classification_report(y_true, y_pred))
     print()
-    return grid_linear
+    return grid_linear, y_pred
 
 
 def load_data():
@@ -182,28 +181,41 @@ def load_data():
     return x_test, y_test, x_val, y_val, x_train, y_train
 
 
-def plot_accuracy_score(target_y, prediction):
-    accuracy = accuracy_score(target_y, prediction)
+def print_accuracy_score(y_test, y_pred):
+    accuracy = accuracy_score(y_test, y_pred)
     print("LINEAR MODEL ACCURACY: " + str(accuracy))
 
 
-def plot_confusion_matrix(classifier, test_x, test_y):
-    plt_confusion_matrix(classifier, test_x, test_y)
+def confusion_plot(classifier, x_test, y_test):
+    plot_confusion_matrix(classifier, x_test, y_test)
+    plt.show()
+
+
+def roc_plot(classifier, x_test, y_test):
+    plot_roc_curve(classifier, x_test, y_test)
     plt.show()
 
 
 def main():
     x_test, y_test, x_val, y_val, x_train, y_train = load_data()
-    linear_model = linear_classification(x_train, y_train, x_val, y_val)
-    kNN_model = kNN_classification(x_train, y_train, x_val, y_val)
-    decision_tree_model = decision_tree_classification(
+    linear_model, linear_prediction = linear_classification(
         x_train, y_train, x_val, y_val
     )
-    random_forest_model = random_forest_classification(
+    kNN_model, kNN_prediction = kNN_classification(
         x_train, y_train, x_val, y_val
     )
+    (
+        decision_tree_model,
+        decision_tree_prediction,
+    ) = decision_tree_classification(x_train, y_train, x_val, y_val)
+    (
+        random_forest_model,
+        random_forest_prediction,
+    ) = random_forest_classification(x_train, y_train, x_val, y_val)
+
     # plot_accuracy_score(test_y, prediction_linear)
     # plot_confusion_matrix(linear_model, x_test, y_test)
+    # roc_plot(linear_model, x_test, y_test)
 
 
 if __name__ == "__main__":
