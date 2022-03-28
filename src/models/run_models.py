@@ -86,8 +86,10 @@ def random_forest_classification(x_train, y_train, x_val, y_val):
     print("Detailed classification report:")
     print()
     y_true, y_pred = y_val, grid_random_forest.predict(x_val)
-    print(classification_report(y_true, y_pred))
+    # print(classification_report(y_true, y_pred))
     print()
+    accuracy = accuracy_score(y_true, y_pred)
+    print("RANDOM FOREST MODEL ACCURACY: " + str(accuracy))
     return grid_random_forest, y_pred
 
 
@@ -114,8 +116,10 @@ def decision_tree_classification(x_train, y_train, x_val, y_val):
     print("Detailed classification report:")
     print()
     y_true, y_pred = y_val, grid_decision_tree.predict(x_val)
-    print(classification_report(y_true, y_pred))
+    # print(classification_report(y_true, y_pred))
     print()
+    accuracy = accuracy_score(y_true, y_pred)
+    print("DECISION TREE MODEL ACCURACY: " + str(accuracy))
     return grid_decision_tree, y_pred
 
 
@@ -137,8 +141,10 @@ def kNN_classification(x_train, y_train, x_val, y_val):
     print("Detailed classification report:")
     print()
     y_true, y_pred = y_val, grid_knn.predict(x_val)
-    print(classification_report(y_true, y_pred))
+    # print(classification_report(y_true, y_pred))
     print()
+    accuracy = accuracy_score(y_true, y_pred)
+    print("KNN MODEL ACCURACY: " + str(accuracy))
     return grid_knn, y_pred
 
 
@@ -161,8 +167,10 @@ def linear_classification(x_train, y_train, x_val, y_val):
     print("Detailed classification report:")
     print()
     y_true, y_pred = y_val, grid_linear.predict(x_val)
-    print(classification_report(y_true, y_pred))
+    # print(classification_report(y_true, y_pred))
     print()
+    accuracy = accuracy_score(y_true, y_pred)
+    print("LINEAR MODEL ACCURACY: " + str(accuracy))
     return grid_linear, y_pred
 
 
