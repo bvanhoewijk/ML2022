@@ -77,7 +77,7 @@ def main():
         hero_data = pd.read_csv(hero_file, sep="\t", index_col=0)
 
         # Drop unneeded columns for a bit:
-        match_data2 = match_data.drop(['match_result', 'match_id', 'game_mode'], axis=1)
+        match_data2 = match_data.drop(['match_result', 'match_id'], axis=1)
         
         # Add hero attributes:
         res = match_data2.apply(lambda x: hero_attributes_per_team(x, hero_data), axis=1)
