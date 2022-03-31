@@ -8,9 +8,9 @@ Adding hero attributes to match information:
 ```
 python \
     ./src/script/add_hero_attributes.py \
-    ./data/jan_2021_to_feb_2022_linear_output.csv \
+    ./data/API/jan_2021_to_mar_2022.csv \
     ./data/hero_attributes.txt \
-    ./data/jan_2021_to_feb_2022_linear_output_with_attributes.csv
+    ./data/API/jan_2021_to_mar_2022_with_attributes.csv
 ```
 
 ```
