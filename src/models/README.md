@@ -748,7 +748,7 @@ Detailed classification report:
 RANDOM FOREST MODEL ACCURACY: 0.5285
 ```
 
-# Random forest model
+# Baseline model
 ```
 Best parameters set found on training set:
 
